@@ -117,7 +117,7 @@ d:/Resumescan/
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local)
 
 ### Prerequisites
 
@@ -139,7 +139,11 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env` file in the project root:
+```sh
+cp .env.example .env
+```
+
+Then open `.env` and fill in your Gemini API key:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
@@ -154,6 +158,43 @@ npm run dev
 ```
 
 The app will be available at **[http://localhost:4321](http://localhost:4321)**.
+
+---
+
+## ☁️ Deploy to Vercel
+
+This project is configured for **one-click Vercel deployment** using the `@astrojs/vercel` adapter.
+
+### Option A — Deploy via Vercel Dashboard (Recommended)
+
+1. Push your code to GitHub (already done ✅)
+2. Go to [vercel.com/new](https://vercel.com/new) and import your GitHub repository
+3. Vercel will auto-detect the Astro framework — no build settings needed
+4. Add your environment variable:
+   - **Name:** `GEMINI_API_KEY`
+   - **Value:** your Google Gemini API key
+5. Click **Deploy** 🚀
+
+### Option B — Deploy via Vercel CLI
+
+```sh
+npm install -g vercel
+vercel
+```
+
+Follow the prompts, then set the environment variable:
+
+```sh
+vercel env add GEMINI_API_KEY
+```
+
+### Environment Variables on Vercel
+
+| Variable | Required | Description |
+|---|---|---|
+| `GEMINI_API_KEY` | ✅ Yes | Google Gemini API key — [get one here](https://aistudio.google.com/app/apikey) |
+
+> **Note:** All API routes (`/api/scan`, `/api/tailor`, `/api/download`) run as Vercel Serverless Functions. The Gemini API key is kept server-side and never exposed to the browser.
 
 ---
 

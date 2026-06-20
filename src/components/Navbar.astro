@@ -1,0 +1,89 @@
+---
+// Navbar.astro — Vercel-style sticky navigation
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 h-16 bg-canvas/80 backdrop-blur-lg border-b border-hairline transition-all duration-200"
+>
+  <div class="page-container-wide flex items-center justify-between h-full">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 text-ink no-underline group">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" class="transition-transform duration-200 group-hover:scale-105">
+        <rect width="32" height="32" rx="8" fill="#171717"/>
+        <path d="M8 10h16M8 16h12M8 22h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="24" cy="22" r="4" fill="#007cf0" stroke="#171717" stroke-width="1"/>
+        <path d="M22.5 22l1 1 2-2" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="text-body-sm-strong text-ink">Resumescan</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-1">
+      <a href="#features" class="text-body-sm text-body px-3 py-2 rounded-full hover:text-ink hover:bg-canvas-soft-2 transition-colors duration-150">Features</a>
+      <a href="#how-it-works" class="text-body-sm text-body px-3 py-2 rounded-full hover:text-ink hover:bg-canvas-soft-2 transition-colors duration-150">How It Works</a>
+      <a href="#faq" class="text-body-sm text-body px-3 py-2 rounded-full hover:text-ink hover:bg-canvas-soft-2 transition-colors duration-150">FAQ</a>
+    </div>
+
+    <!-- CTA Cluster -->
+    <div class="flex items-center gap-2">
+      <a
+        href="/scan"
+        class="btn-nav bg-ink text-on-primary border-none hidden sm:inline-flex hover:opacity-85 transition-opacity duration-150"
+      >
+        Get Started
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden flex items-center justify-center w-9 h-9 rounded-md hover:bg-canvas-soft-2 transition-colors duration-150"
+        aria-label="Toggle menu"
+        type="button"
+      >
+        <svg id="hamburger-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" class="text-ink">
+          <path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg id="close-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" class="text-ink hidden">
+          <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-16 left-0 right-0 bg-canvas border-b border-hairline shadow-level-5 py-4 px-6"
+  >
+    <div class="flex flex-col gap-1">
+      <a href="#features" class="text-body-sm text-body py-3 border-b border-hairline hover:text-ink transition-colors">Features</a>
+      <a href="#how-it-works" class="text-body-sm text-body py-3 border-b border-hairline hover:text-ink transition-colors">How It Works</a>
+      <a href="#faq" class="text-body-sm text-body py-3 border-b border-hairline hover:text-ink transition-colors">FAQ</a>
+      <a href="/scan" class="btn-primary mt-4 text-center">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const close = document.getElementById('close-icon');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    hamburger?.classList.toggle('hidden');
+    close?.classList.toggle('hidden');
+  });
+
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      hamburger?.classList.remove('hidden');
+      close?.classList.add('hidden');
+    });
+  });
+</script>

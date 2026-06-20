@@ -1,0 +1,585 @@
+@import "tailwindcss";
+@source "../**/*.astro";
+@source "../**/*.tsx";
+
+/* ═══════════════════════════════════════════════════════════
+   RESUMESCAN — Design System (Vercel-Inspired)
+   Based on DESIGN.md token specification
+   ═══════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ─── Colors: Brand & Surface ─── */
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #fafafa;
+  --color-canvas-soft-2: #f5f5f5;
+  --color-ink: #171717;
+  --color-body: #4d4d4d;
+  --color-mute: #888888;
+  --color-on-primary: #ffffff;
+
+  /* ─── Colors: Borders ─── */
+  --color-hairline: #ebebeb;
+  --color-hairline-strong: #a1a1a1;
+
+  /* ─── Colors: Interactive ─── */
+  --color-link: #0070f3;
+  --color-link-deep: #0761d1;
+  --color-link-bg-soft: #d3e5ff;
+
+  /* ─── Colors: Semantic ─── */
+  --color-success: #0070f3;
+  --color-error: #ee0000;
+  --color-error-soft: #f7d4d6;
+  --color-error-deep: #c50000;
+  --color-warning: #f5a623;
+  --color-warning-soft: #ffefcf;
+  --color-warning-deep: #ab570a;
+
+  /* ─── Colors: Accent ─── */
+  --color-violet: #7928ca;
+  --color-violet-soft: #d8ccf1;
+  --color-violet-deep: #4c2889;
+  --color-cyan: #50e3c2;
+  --color-cyan-soft: #aaffec;
+  --color-cyan-deep: #29bc9b;
+  --color-highlight-pink: #ff0080;
+  --color-highlight-magenta: #eb367f;
+
+  /* ─── Colors: Gradients ─── */
+  --color-gradient-develop-start: #007cf0;
+  --color-gradient-develop-end: #00dfd8;
+  --color-gradient-preview-start: #7928ca;
+  --color-gradient-preview-end: #ff0080;
+  --color-gradient-ship-start: #ff4d4d;
+  --color-gradient-ship-end: #f9cb28;
+
+  /* ─── Colors: Selection ─── */
+  --color-selection-bg: #171717;
+  --color-selection-fg: #f2f2f2;
+
+  /* ─── Fonts ─── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  /* ─── Border Radius ─── */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill-sm: 64px;
+  --radius-pill: 100px;
+  --radius-full: 9999px;
+}
+
+/* ─── Global Base Styles ─── */
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-fg);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-canvas-soft);
+  line-height: 1.5;
+}
+
+/* ─── Elevation System (Stacked Shadows) ─── */
+@utility shadow-level-1 {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+@utility shadow-level-2 {
+  box-shadow:
+    0px 1px 1px rgba(0, 0, 0, 0.02),
+    0px 2px 2px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+@utility shadow-level-3 {
+  box-shadow:
+    0px 2px 2px rgba(0, 0, 0, 0.04),
+    0px 8px 8px -8px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+@utility shadow-level-4 {
+  box-shadow:
+    0px 2px 2px rgba(0, 0, 0, 0.04),
+    0px 8px 16px -4px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+@utility shadow-level-5 {
+  box-shadow:
+    0px 1px 1px rgba(0, 0, 0, 0.02),
+    0px 8px 16px -4px rgba(0, 0, 0, 0.04),
+    0px 24px 32px -8px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Typography Presets ─── */
+@utility text-display-xl {
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -2.4px;
+}
+
+@utility text-display-lg {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1.28px;
+}
+
+@utility text-display-md {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.96px;
+}
+
+@utility text-display-sm {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.6px;
+}
+
+@utility text-body-lg {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@utility text-body-md {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@utility text-body-md-strong {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@utility text-body-sm {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+}
+
+@utility text-body-sm-strong {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+}
+
+@utility text-caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@utility text-caption-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@utility text-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@utility text-button-md {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@utility text-button-lg {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* ─── Component Classes ─── */
+
+/* Buttons */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-ink);
+  color: var(--color-on-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@utility btn-primary-hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  border: 1px solid var(--color-hairline);
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@utility btn-secondary-hover {
+  border-color: var(--color-ink);
+}
+
+@utility btn-sm {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 8px 16px;
+}
+
+/* Nav Buttons */
+@utility btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: var(--radius-sm);
+  padding: 0px 8px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Cards */
+@utility card-marketing {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+@utility card-marketing-lg {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+@utility card-soft {
+  background-color: var(--color-canvas-soft);
+  color: var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+/* Form Inputs */
+@utility form-input {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+@utility form-input-lg {
+  font-size: 16px;
+  line-height: 24px;
+  height: 48px;
+}
+
+/* Badge */
+@utility badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-canvas-soft);
+  color: var(--color-body);
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: var(--radius-full);
+  padding: 2px 8px;
+}
+
+/* Mesh Gradient Background */
+@utility mesh-gradient {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, #007cf0 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 70% 10%, #00dfd8 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 30% 20%, #7928ca 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 80% 60%, #ff0080 0%, transparent 50%),
+    radial-gradient(ellipse 60% 30% at 20% 80%, #f9cb28 0%, transparent 50%);
+}
+
+/* Gradient Text Animation */
+@utility gradient-text {
+  background: linear-gradient(90deg,
+      #007cf0 0%,
+      #00dfd8 25%,
+      #7928ca 50%,
+      #ff0080 75%,
+      #f9cb28 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Animated Score Ring Colors */
+@utility score-low {
+  --score-color: var(--color-error);
+}
+
+@utility score-medium {
+  --score-color: var(--color-warning);
+}
+
+@utility score-high {
+  --score-color: var(--color-success);
+}
+
+/* Page container */
+@utility page-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@utility page-container-wide {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ─── Banner ─── */
+@utility banner-marketing {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  background-color: var(--color-canvas);
+}
+
+/* ─── Custom Scrollbar ─── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-hairline-strong);
+  border-radius: var(--radius-full);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-hairline-strong) transparent;
+}
+
+/* ─── CSS-Only Entrance Animations ─── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInFromBottom {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-in {
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+.fade-in {
+  animation-name: fadeIn;
+}
+.slide-in-from-bottom-4 {
+  animation-name: slideInFromBottom;
+}
+.slide-in-from-bottom-8 {
+  animation-name: slideInFromBottom;
+  --tw-enter-translate-y: 32px;
+}
+.zoom-in-95 {
+  animation-name: zoomIn;
+}
+
+/* ─── Print Styles for PDF Generation ─── */
+
+/* The print-only container is hidden on screen */
+#print-only-resume {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+
+  /* When body has .printing-resume class (added by JS before print),
+     hide ALL direct body children except the print container.
+     display:none removes them from layout entirely — no blank pages. */
+  body.printing-resume > *:not(#print-only-resume) {
+    display: none !important;
+  }
+
+  /* Show the print container */
+  body.printing-resume > #print-only-resume {
+    display: block !important;
+  }
+
+  /* Style the resume content inside the print container */
+  #print-only-resume #resume-preview-content {
+    width: 100%;
+    background-color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Compact typography for single-page fit */
+  #print-only-resume h1 {
+    font-size: 18pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  #print-only-resume h2 {
+    font-size: 11pt !important;
+    margin-top: 6pt !important;
+    margin-bottom: 3pt !important;
+  }
+
+  #print-only-resume p,
+  #print-only-resume li,
+  #print-only-resume span,
+  #print-only-resume div {
+    font-size: 9pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Reduce spacing between sections */
+  #print-only-resume .mb-5,
+  #print-only-resume .mb-6 {
+    margin-bottom: 6pt !important;
+  }
+  #print-only-resume .gap-4 {
+    gap: 4pt !important;
+  }
+  #print-only-resume .gap-3 {
+    gap: 3pt !important;
+  }
+  #print-only-resume .gap-2 {
+    gap: 2pt !important;
+  }
+  #print-only-resume .gap-1 {
+    gap: 1pt !important;
+  }
+  #print-only-resume .p-10,
+  #print-only-resume .p-8 {
+    padding: 0 !important;
+  }
+
+  /* Prevent page breaks inside sections */
+  #print-only-resume > * > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Reset body/html to prevent extra pages */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+}

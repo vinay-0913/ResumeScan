@@ -1,0 +1,67 @@
+---
+// FAQ.astro — Accordion FAQ
+---
+
+<section id="faq" class="py-24 bg-canvas">
+  <div class="page-container max-w-3xl">
+    <div class="text-center mb-16">
+      <h2 class="text-display-lg text-ink">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="flex flex-col gap-4" itemscope itemtype="https://schema.org/FAQPage">
+      
+      <!-- FAQ Item 1 -->
+      <details class="group bg-canvas-soft border border-hairline rounded-lg overflow-hidden [&_summary::-webkit-details-marker]:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-body-md-strong text-ink hover:text-link transition-colors">
+          <span itemprop="name">Is Resumescan really free?</span>
+          <span class="ml-6 flex-shrink-0 transition duration-300 group-open:-rotate-180">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 text-body-md text-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Yes. Our recruiter evaluation, skill gap analysis, readability assessment, and improvement suggestions are completely free. We believe every candidate deserves professional-grade feedback to land their next interview.</p>
+        </div>
+      </details>
+
+      <!-- FAQ Item 2 -->
+      <details class="group bg-canvas-soft border border-hairline rounded-lg overflow-hidden [&_summary::-webkit-details-marker]:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-body-md-strong text-ink hover:text-link transition-colors">
+          <span itemprop="name">How does the recruiter evaluation work?</span>
+          <span class="ml-6 flex-shrink-0 transition duration-300 group-open:-rotate-180">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 text-body-md text-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Our AI is trained to evaluate resumes the way experienced recruiters do. Instead of just matching keywords, it assesses skill relevance with evidence, bullet point impact and measurability, resume readability and formatting quality, and your overall shortlist probability. The result is actionable feedback that mirrors what a real hiring manager would think when reviewing your application.</p>
+        </div>
+      </details>
+
+      <!-- FAQ Item 3 -->
+      <details class="group bg-canvas-soft border border-hairline rounded-lg overflow-hidden [&_summary::-webkit-details-marker]:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-body-md-strong text-ink hover:text-link transition-colors">
+          <span itemprop="name">What makes this different from ATS scanners?</span>
+          <span class="ml-6 flex-shrink-0 transition duration-300 group-open:-rotate-180">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 text-body-md text-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">ATS scanners focus on keyword matching — which leads to "keyword stuffing" that recruiters can spot immediately. We focus on what actually gets you shortlisted: clear impact statements, proper formatting, relevant skill evidence, and compelling career narratives. Our tool answers the question recruiters actually ask: "Would I call this person for an interview?"</p>
+        </div>
+      </details>
+
+      <!-- FAQ Item 4 -->
+      <details class="group bg-canvas-soft border border-hairline rounded-lg overflow-hidden [&_summary::-webkit-details-marker]:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-body-md-strong text-ink hover:text-link transition-colors">
+          <span itemprop="name">Do you store my resume data?</span>
+          <span class="ml-6 flex-shrink-0 transition duration-300 group-open:-rotate-180">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 text-body-md text-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">No. Your resume and job description are processed temporarily to perform the evaluation and generate suggestions. We do not store your documents or personal data on our servers after your session ends. Your privacy is our priority.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>

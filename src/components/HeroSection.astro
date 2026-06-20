@@ -1,0 +1,74 @@
+---
+// HeroSection.astro — Hero with mesh gradient and primary CTAs
+---
+
+<section
+  class="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-canvas"
+>
+  <!-- Mesh Gradient Background -->
+  <div
+    class="absolute inset-0 pointer-events-none overflow-hidden flex justify-center opacity-70"
+  >
+    <div
+      class="mesh-gradient absolute w-[150%] h-[150%] -top-[50%] blur-3xl opacity-30 transform-gpu animate-pulse"
+      style="animation-duration: 8s;"
+    >
+    </div>
+  </div>
+
+  <div
+    class="page-container relative z-10 flex flex-col items-center text-center"
+  >
+    <!-- Announcement Banner -->
+
+    <!-- Headline -->
+    <h1 class="text-display-xl max-w-4xl mb-6 text-ink tracking-tight">
+      Don't <span
+        style="text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 3px;"
+        >beat the ATS</span
+      >, <br class="hidden sm:block" />
+      Instead show clarity, impact, outcome <br class="hidden sm:block" />
+      and make it align with JD.
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-body-lg text-body max-w-2xl mb-10 text-balance">
+      Upload your resume and job description. Get an instant recruiter
+      evaluation — skill gap analysis, readability score, impact assessment, and
+      shortlist probability.
+    </p>
+
+    <!-- CTA Cluster -->
+    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+      <a href="/scan" class="btn-primary w-full sm:w-auto shadow-level-2">
+        Get Recruiter Feedback
+      </a>
+      <a
+        href="#how-it-works"
+        class="btn-secondary w-full sm:w-auto bg-canvas/50 backdrop-blur-sm"
+      >
+        See How It Works
+      </a>
+    </div>
+
+    <!-- Mini Social Proof -->
+    <p
+      class="mt-8 text-caption text-mute flex items-center justify-center gap-2"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        class="text-success"
+        ><path
+          d="M20 6L9 17l-5-5"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path></svg
+      >
+      No signup required. Always free.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,106 @@
+---
+// FeaturesSection.astro — Feature showcase on canvas
+---
+
+<section id="features" class="py-24 bg-canvas">
+  <div class="page-container-wide">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <h2 class="text-caption-mono text-link mb-2">Features</h2>
+      <h3 class="text-display-lg text-ink">What real recruiters look for — analyzed in seconds.</h3>
+      <p class="text-body-lg text-body mt-4">
+        We don't just count keywords. We evaluate your resume the way a senior recruiter would — assessing clarity, impact, skill relevance, and interview potential.
+      </p>
+    </div>
+
+    <!-- Feature 1: Recruiter-Style Skill Evaluation -->
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-24">
+      <div class="flex-1 lg:order-2">
+        <h4 class="text-display-md text-ink mb-4">Recruiter-Style Skill Evaluation</h4>
+        <p class="text-body-md text-body mb-6">
+          Go beyond keyword matching. Our AI evaluates your skills like a real recruiter — identifying strong matches, partial matches, critical gaps, and bonus skills that set you apart.
+        </p>
+        <ul class="flex flex-col gap-3">
+          <li class="flex items-center gap-3 text-body-md text-ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-success shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Evidence-based skill assessment with reasoning</li>
+          <li class="flex items-center gap-3 text-body-md text-ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-success shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Critical vs. nice-to-have gap identification</li>
+          <li class="flex items-center gap-3 text-body-md text-ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-success shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Shortlist probability with recruiter reasoning</li>
+        </ul>
+      </div>
+      <div class="flex-1 w-full lg:order-1">
+        <div class="rounded-xl overflow-hidden shadow-level-4 border border-hairline bg-canvas-soft p-2">
+          <!-- Mockup of the skill evaluation UI -->
+          <div class="rounded-lg bg-canvas border border-hairline shadow-level-1 overflow-hidden h-[300px] flex flex-col">
+            <div class="h-10 border-b border-hairline bg-canvas-soft flex items-center px-4 gap-2">
+              <div class="w-3 h-3 rounded-full bg-error"></div>
+              <div class="w-3 h-3 rounded-full bg-warning"></div>
+              <div class="w-3 h-3 rounded-full bg-success"></div>
+            </div>
+            <div class="flex-1 p-4 flex flex-col gap-3">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="text-2xl">👤</div>
+                <div>
+                  <div class="text-body-sm-strong text-ink">Recruiter Verdict</div>
+                  <div class="text-caption text-mute">Shortlist: Likely</div>
+                </div>
+                <div class="ml-auto text-display-sm font-bold text-link">78/100</div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="border border-emerald-200 bg-emerald-50 rounded p-2">
+                  <div class="text-caption-mono text-emerald-700 mb-1">✓ Strong Matches</div>
+                  <div class="flex flex-wrap gap-1">
+                    <span class="badge bg-emerald-100 text-emerald-700 border border-emerald-200">React</span>
+                    <span class="badge bg-emerald-100 text-emerald-700 border border-emerald-200">TypeScript</span>
+                  </div>
+                </div>
+                <div class="border border-red-200 bg-red-50 rounded p-2">
+                  <div class="text-caption-mono text-red-700 mb-1">✕ Missing Critical</div>
+                  <div class="flex flex-wrap gap-1">
+                    <span class="badge bg-red-100 text-red-700 border border-red-200">Kubernetes</span>
+                    <span class="badge bg-red-100 text-red-700 border border-red-200">AWS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Evidence-Based Resume Improvements -->
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-24">
+      <div class="flex-1">
+        <h4 class="text-display-md text-ink mb-4">Evidence-Based Resume Improvements</h4>
+        <p class="text-body-md text-body mb-6">
+          Get specific, recruiter-quality rewrites for your weakest bullet points. Every suggestion includes reasoning — not just what to change, but why a recruiter would care.
+        </p>
+        <ul class="flex flex-col gap-3">
+          <li class="flex items-center gap-3 text-body-md text-ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-success shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Before & After with detailed reasoning</li>
+          <li class="flex items-center gap-3 text-body-md text-ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-success shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> STAR method rewrites that show real impact</li>
+          <li class="flex items-center gap-3 text-body-md text-ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-success shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Readability & formatting assessment</li>
+        </ul>
+      </div>
+      <div class="flex-1 w-full">
+        <div class="rounded-xl overflow-hidden shadow-level-4 border border-hairline bg-canvas-soft p-2">
+           <div class="rounded-lg bg-canvas border border-hairline shadow-level-1 overflow-hidden h-[300px] flex flex-col p-6">
+             <div class="mb-4">
+               <div class="text-caption-mono text-red-600 mb-1 flex items-center gap-1">✕ Before</div>
+               <p class="text-body-sm text-body line-through decoration-red-300/50">Worked on backend systems and helped improve performance.</p>
+             </div>
+             <div class="mb-4">
+               <div class="text-caption-mono text-emerald-600 mb-1 flex items-center gap-1">
+                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                 After
+               </div>
+               <p class="text-body-sm text-ink bg-emerald-50 p-2 rounded border border-emerald-200">
+                 Architected and deployed <span class="font-medium text-emerald-700">3 microservices</span> handling 10K RPM, reducing API latency by <span class="font-medium text-emerald-700">40%</span> across the payment pipeline.
+               </p>
+             </div>
+             <div class="text-caption text-mute flex items-start gap-1 mt-auto">
+               <span>💡</span>
+               <span>Added specificity, metrics, and strong action verbs that recruiters look for.</span>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { ResumeScanner } from '../components/app/ResumeScanner';
+---
+
+<Layout title="Get Recruiter Feedback | Resumescan">
+  <Navbar />
+  
+  <main class="min-h-screen pt-24 pb-32 bg-canvas-soft">
+    <div class="page-container-wide">
+      <ResumeScanner client:load />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

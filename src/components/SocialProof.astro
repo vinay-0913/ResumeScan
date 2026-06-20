@@ -1,0 +1,311 @@
+---
+// SocialProof.astro — Stats and trust section with company marquee
+---
+
+<section class="py-24 bg-canvas-soft border-b border-hairline overflow-hidden">
+  <div class="page-container-wide text-center">
+    <p class="text-caption-mono text-mute mb-10">TRUSTED BY CANDIDATES LANDING ROLES AT</p>
+
+    <!-- Infinite Logo Marquee -->
+    <div class="logo-marquee-wrapper relative mb-24">
+      <div class="fade-left pointer-events-none absolute inset-y-0 left-0 w-24 z-10"></div>
+      <div class="fade-right pointer-events-none absolute inset-y-0 right-0 w-24 z-10"></div>
+
+      <div class="logo-marquee-track">
+        <!-- Set 1 -->
+        <div class="logo-marquee-set">
+
+          <!-- Google -->
+          <div class="company-logo-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <span>Google</span>
+          </div>
+
+          <!-- Microsoft -->
+          <div class="company-logo-pill">
+            <svg width="20" height="20" viewBox="0 0 21 21">
+              <rect width="10" height="10" fill="#F25022"/>
+              <rect x="11" width="10" height="10" fill="#7FBA00"/>
+              <rect y="11" width="10" height="10" fill="#00A4EF"/>
+              <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
+            </svg>
+            <span>Microsoft</span>
+          </div>
+
+          <!-- Amazon — wordmark "a" with smile arrow -->
+          <div class="company-logo-pill">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
+              <path d="M15.93 17.09c-2.37 1.74-5.81 2.67-8.77 2.67-4.15 0-7.89-1.53-10.72-4.09-.22-.2-.02-.47.24-.32 3.05 1.78 6.82 2.84 10.72 2.84 2.63 0 5.52-.54 8.18-1.68.4-.17.74.26.35.58z"/>
+              <path d="M16.94 15.83c-.3-.38-1.97-.18-2.72-.09-.23.03-.26-.17-.06-.31 1.33-.94 3.52-.67 3.77-.35.25.32-.07 2.54-1.32 3.6-.19.16-.37.08-.29-.14.28-.71.91-2.34.62-2.71z"/>
+              <path d="M13.47 3.9V2.16c0-.26.2-.44.43-.44h7.64c.24 0 .44.18.44.44v1.52c0 .25-.21.58-.58 1.1L18.1 8.5c1.16-.03 2.38.15 3.43.74.24.13.3.32.32.51v1.86c0 .2-.21.42-.43.3-1.8-1-4.3-1.08-6.34.01-.2.12-.42-.09-.42-.29V9.82c0-.22.01-.59.22-.93l3.94-5.65h-3.44c-.24 0-.44-.18-.44-.44V3.9z"/>
+              <path d="M4.83 13.65H2.97c-.22-.01-.39-.17-.41-.38V2.2c0-.23.2-.42.45-.42h1.74c.22.01.4.18.41.39v1.43h.03C5.73 2.44 6.69 2 7.89 2c1.22 0 1.99.61 2.54 1.6C10.97 2.61 12.1 2 13.26 2c.82 0 1.73.34 2.28 1.13.63.87.5 2.14.5 3.25v6.56c0 .23-.2.41-.45.41H13.7c-.23-.01-.42-.19-.42-.41V7.35c0-.44.04-1.53-.06-1.94-.16-.7-.6-.9-1.18-.9-.49 0-1 .33-1.2.85-.21.52-.19 1.4-.19 1.99v6.08c0 .23-.2.41-.45.41H8.35c-.23-.01-.42-.19-.42-.41l-.01-6.08c0-1.28.21-3.16-1.24-3.16-1.46 0-1.41 1.83-1.41 3.16v6.08c0 .23-.2.41-.44.41z"/>
+            </svg>
+            <span>Amazon</span>
+          </div>
+
+          <!-- Meta -->
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/>
+            </svg>
+            <span>Meta</span>
+          </div>
+
+          <!-- Apple -->
+          <div class="company-logo-pill">
+            <svg width="18" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span>Apple</span>
+          </div>
+
+          <!-- Netflix — clean N lettermark -->
+          <div class="company-logo-pill">
+            <svg width="16" height="22" viewBox="0 0 24 24" fill="#E50914">
+              <path d="M5.398 0v.006c3.028 8.556 5.37 15.175 8.348 23.596 2.344.058 4.85.398 4.854.398-2.8-7.924-5.923-16.747-8.487-24H5.398zm8.489 0v9.63L18.6 24c.538.006 1.77.08 2.342.15L18.488 18c.002-5.342.003-11.77.002-18H13.887zm-8.49 0H5.398L5.397 17.942 9.881 24l.006-24z"/>
+            </svg>
+            <span>Netflix</span>
+          </div>
+
+          <!-- Stripe -->
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#635BFF">
+              <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/>
+            </svg>
+            <span>Stripe</span>
+          </div>
+
+          <!-- Salesforce — cloud shape -->
+          <div class="company-logo-pill">
+            <svg width="26" height="18" viewBox="0 0 64 44" fill="#00A1E0">
+              <path d="M26.5 4.8A10.8 10.8 0 0 1 36 0c4.6 0 8.6 2.8 10.4 6.8A8.2 8.2 0 0 1 50 6c4.4 0 8 3.6 8 8s-3.6 8-8 8H14C9.6 22 6 18.4 6 14c0-3.9 2.8-7.2 6.6-7.9C13.4 2.7 17 0 21.4 0c2 0 3.9.6 5.1 1.5"/>
+            </svg>
+            <span>Salesforce</span>
+          </div>
+
+          <!-- Uber — U shape -->
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1 16.584C10.835 16.584 9 15.747 9 12.918V7h2v5.918c0 1.29.518 1.914 2 1.914s2-.623 2-1.914V7h2v5.918c0 2.83-1.835 3.666-4 3.666z"/>
+            </svg>
+            <span>Uber</span>
+          </div>
+
+          <!-- Adobe -->
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF0000">
+              <path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm6.271 0H24v21.248z"/>
+            </svg>
+            <span>Adobe</span>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="company-logo-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </div>
+
+          <!-- Figma — actual Figma colorful logo -->
+          <div class="company-logo-pill">
+            <svg width="16" height="22" viewBox="0 0 24 24">
+              <path d="M8 24c2.2 0 4-1.8 4-4v-4H8c-2.2 0-4 1.8-4 4s1.8 4 4 4z" fill="#0ACF83"/>
+              <path d="M4 12c0-2.2 1.8-4 4-4h4v8H8c-2.2 0-4-1.8-4-4z" fill="#A259FF"/>
+              <path d="M4 4c0-2.2 1.8-4 4-4h4v8H8C5.8 8 4 6.2 4 4z" fill="#F24E1E"/>
+              <path d="M12 0h4c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4V0z" fill="#FF7262"/>
+              <path d="M20 12c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4z" fill="#1ABCFE"/>
+            </svg>
+            <span>Figma</span>
+          </div>
+
+        </div>
+
+        <!-- Set 2 — duplicate for seamless loop -->
+        <div class="logo-marquee-set" aria-hidden="true">
+
+          <div class="company-logo-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <span>Google</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="20" height="20" viewBox="0 0 21 21">
+              <rect width="10" height="10" fill="#F25022"/>
+              <rect x="11" width="10" height="10" fill="#7FBA00"/>
+              <rect y="11" width="10" height="10" fill="#00A4EF"/>
+              <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
+            </svg>
+            <span>Microsoft</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
+              <path d="M15.93 17.09c-2.37 1.74-5.81 2.67-8.77 2.67-4.15 0-7.89-1.53-10.72-4.09-.22-.2-.02-.47.24-.32 3.05 1.78 6.82 2.84 10.72 2.84 2.63 0 5.52-.54 8.18-1.68.4-.17.74.26.35.58z"/>
+              <path d="M16.94 15.83c-.3-.38-1.97-.18-2.72-.09-.23.03-.26-.17-.06-.31 1.33-.94 3.52-.67 3.77-.35.25.32-.07 2.54-1.32 3.6-.19.16-.37.08-.29-.14.28-.71.91-2.34.62-2.71z"/>
+              <path d="M13.47 3.9V2.16c0-.26.2-.44.43-.44h7.64c.24 0 .44.18.44.44v1.52c0 .25-.21.58-.58 1.1L18.1 8.5c1.16-.03 2.38.15 3.43.74.24.13.3.32.32.51v1.86c0 .2-.21.42-.43.3-1.8-1-4.3-1.08-6.34.01-.2.12-.42-.09-.42-.29V9.82c0-.22.01-.59.22-.93l3.94-5.65h-3.44c-.24 0-.44-.18-.44-.44V3.9z"/>
+              <path d="M4.83 13.65H2.97c-.22-.01-.39-.17-.41-.38V2.2c0-.23.2-.42.45-.42h1.74c.22.01.4.18.41.39v1.43h.03C5.73 2.44 6.69 2 7.89 2c1.22 0 1.99.61 2.54 1.6C10.97 2.61 12.1 2 13.26 2c.82 0 1.73.34 2.28 1.13.63.87.5 2.14.5 3.25v6.56c0 .23-.2.41-.45.41H13.7c-.23-.01-.42-.19-.42-.41V7.35c0-.44.04-1.53-.06-1.94-.16-.7-.6-.9-1.18-.9-.49 0-1 .33-1.2.85-.21.52-.19 1.4-.19 1.99v6.08c0 .23-.2.41-.45.41H8.35c-.23-.01-.42-.19-.42-.41l-.01-6.08c0-1.28.21-3.16-1.24-3.16-1.46 0-1.41 1.83-1.41 3.16v6.08c0 .23-.2.41-.44.41z"/>
+            </svg>
+            <span>Amazon</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/>
+            </svg>
+            <span>Meta</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="18" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span>Apple</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="16" height="22" viewBox="0 0 24 24" fill="#E50914">
+              <path d="M5.398 0v.006c3.028 8.556 5.37 15.175 8.348 23.596 2.344.058 4.85.398 4.854.398-2.8-7.924-5.923-16.747-8.487-24H5.398zm8.489 0v9.63L18.6 24c.538.006 1.77.08 2.342.15L18.488 18c.002-5.342.003-11.77.002-18H13.887zm-8.49 0H5.398L5.397 17.942 9.881 24l.006-24z"/>
+            </svg>
+            <span>Netflix</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#635BFF">
+              <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/>
+            </svg>
+            <span>Stripe</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="26" height="18" viewBox="0 0 64 44" fill="#00A1E0">
+              <path d="M26.5 4.8A10.8 10.8 0 0 1 36 0c4.6 0 8.6 2.8 10.4 6.8A8.2 8.2 0 0 1 50 6c4.4 0 8 3.6 8 8s-3.6 8-8 8H14C9.6 22 6 18.4 6 14c0-3.9 2.8-7.2 6.6-7.9C13.4 2.7 17 0 21.4 0c2 0 3.9.6 5.1 1.5"/>
+            </svg>
+            <span>Salesforce</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1 16.584C10.835 16.584 9 15.747 9 12.918V7h2v5.918c0 1.29.518 1.914 2 1.914s2-.623 2-1.914V7h2v5.918c0 2.83-1.835 3.666-4 3.666z"/>
+            </svg>
+            <span>Uber</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF0000">
+              <path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm6.271 0H24v21.248z"/>
+            </svg>
+            <span>Adobe</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </div>
+
+          <div class="company-logo-pill">
+            <svg width="16" height="22" viewBox="0 0 24 24">
+              <path d="M8 24c2.2 0 4-1.8 4-4v-4H8c-2.2 0-4 1.8-4 4s1.8 4 4 4z" fill="#0ACF83"/>
+              <path d="M4 12c0-2.2 1.8-4 4-4h4v8H8c-2.2 0-4-1.8-4-4z" fill="#A259FF"/>
+              <path d="M4 4c0-2.2 1.8-4 4-4h4v8H8C5.8 8 4 6.2 4 4z" fill="#F24E1E"/>
+              <path d="M12 0h4c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4V0z" fill="#FF7262"/>
+              <path d="M20 12c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4z" fill="#1ABCFE"/>
+            </svg>
+            <span>Figma</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="flex flex-col items-center">
+        <span class="text-display-xl text-ink font-bold">10k+</span>
+        <span class="text-body-sm text-mute mt-2">Resumes Evaluated</span>
+      </div>
+      <div class="flex flex-col items-center md:border-x border-hairline">
+        <span class="text-display-xl text-ink font-bold">87%</span>
+        <span class="text-body-sm text-mute mt-2">Shortlist Rate After Improvements</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="text-display-xl text-ink font-bold">0$</span>
+        <span class="text-body-sm text-mute mt-2">Free Forever</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-marquee-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .fade-left {
+    background: linear-gradient(to right, var(--color-canvas-soft, #f8f9fa) 0%, transparent 100%);
+  }
+
+  .fade-right {
+    background: linear-gradient(to left, var(--color-canvas-soft, #f8f9fa) 0%, transparent 100%);
+  }
+
+  .logo-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
+  }
+
+  .logo-marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .logo-marquee-set {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-right: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .company-logo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(128, 128, 128, 0.18);
+    background: rgba(128, 128, 128, 0.05);
+    opacity: 0.55;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+    flex-shrink: 0;
+  }
+
+  .company-logo-pill:hover {
+    opacity: 1;
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+</style>

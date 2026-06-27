@@ -8,11 +8,9 @@ import { ResumeScanner } from '../components/app/ResumeScanner';
 <Layout title="Get Recruiter Feedback | Resumescan">
   <Navbar />
   
-  <main class="min-h-screen pt-24 pb-32 bg-canvas-soft">
-    <div class="page-container-wide">
+  <main class="h-screen flex flex-col bg-canvas-soft overflow-hidden">
+    <div class="flex-1 overflow-y-auto pt-[64px]">
       <ResumeScanner client:load />
     </div>
   </main>
-
-  <Footer />
 </Layout>

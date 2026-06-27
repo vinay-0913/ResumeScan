@@ -4,9 +4,10 @@ import type { StructuredResume } from '../../../../lib/types';
 interface DownloadBarProps {
   resume: StructuredResume;
   templateId: string;
+  fileName?: string;
 }
 
-export function DownloadBar({ resume, templateId }: DownloadBarProps) {
+export function DownloadBar({ resume, templateId, fileName }: DownloadBarProps) {
   const [isDownloadingDOCX, setIsDownloadingDOCX] = useState(false);
 
   const handleDownloadPDF = () => {
@@ -22,6 +23,12 @@ export function DownloadBar({ resume, templateId }: DownloadBarProps) {
     printContainer.appendChild(source.cloneNode(true));
     document.body.appendChild(printContainer);
 
+    // Temporarily change document title so print dialog uses it as filename
+    const originalTitle = document.title;
+    if (fileName) {
+      document.title = fileName;
+    }
+
     // Add print-mode class to body so CSS can hide everything else
     document.body.classList.add('printing-resume');
 
@@ -31,6 +38,7 @@ export function DownloadBar({ resume, templateId }: DownloadBarProps) {
 
       // Cleanup after print dialog closes
       document.body.classList.remove('printing-resume');
+      document.title = originalTitle;
       if (document.body.contains(printContainer)) {
         document.body.removeChild(printContainer);
       }
@@ -57,7 +65,7 @@ export function DownloadBar({ resume, templateId }: DownloadBarProps) {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `tailored_resume_${templateId}.docx`;
+      a.download = `${fileName || 'Resume'}.docx`;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
@@ -71,28 +79,25 @@ export function DownloadBar({ resume, templateId }: DownloadBarProps) {
   };
 
   return (
-    <div className="bg-canvas border-t border-hairline p-4 flex items-center justify-between shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-20">
-      <div className="flex flex-col">
-        <span className="text-body-sm-strong text-ink">Ready to download?</span>
-        <span className="text-caption text-mute">Template: {templateId}</span>
-      </div>
-      <div className="flex items-center gap-3">
-        <button 
-          onClick={handleDownloadPDF}
-          className="btn-secondary"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mr-2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          Download PDF
-        </button>
-        <button 
-          onClick={handleDownloadDOCX}
-          disabled={isDownloadingDOCX}
-          className="btn-primary"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mr-2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          {isDownloadingDOCX ? 'Generating...' : 'Download DOCX'}
-        </button>
-      </div>
-    </div>
+    <>
+      <button
+        onClick={handleDownloadPDF}
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-caption font-medium text-mute hover:text-ink bg-canvas-soft hover:bg-canvas-soft-2 border border-hairline rounded-lg transition-colors"
+        title="Download as PDF"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        PDF
+      </button>
+      <button
+        onClick={handleDownloadDOCX}
+        disabled={isDownloadingDOCX}
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-caption font-medium text-white bg-ink hover:opacity-90 rounded-lg transition-colors disabled:opacity-50"
+        title="Download as DOCX"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        {isDownloadingDOCX ? '...' : 'DOCX'}
+      </button>
+    </>
   );
 }
+

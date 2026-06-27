@@ -3,7 +3,7 @@
 ---
 
 <section
-  class="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-canvas"
+  class="relative min-h-[100svh] flex flex-col justify-center py-20 md:py-32 overflow-hidden bg-canvas"
 >
   <!-- Mesh Gradient Background -->
   <div
@@ -22,24 +22,30 @@
     <!-- Announcement Banner -->
 
     <!-- Headline -->
-    <h1 class="text-display-xl max-w-4xl mb-6 text-ink tracking-tight">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold max-w-5xl mb-6 text-ink tracking-tight text-center leading-tight whitespace-nowrap">
       Don't <span
-        style="text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 3px;"
+        style="text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 0.1em;"
         >beat the ATS</span
-      >, <br class="hidden sm:block" />
-      Instead show clarity, impact, outcome <br class="hidden sm:block" />
-      and make it align with JD.
+      >
     </h1>
+    
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold max-w-3xl mb-4 text-ink/90 tracking-tight text-center text-balance leading-snug">
+      Instead show clarity, impact, outcome and make it align with JD.
+    </h2>
+
+    <p class="text-xl sm:text-2xl italic text-ink/70 max-w-2xl mb-10 text-center font-medium">
+      Things Recruiter actually care.
+    </p>
 
     <!-- Subheadline -->
-    <p class="text-body-lg text-body max-w-2xl mb-10 text-balance">
+    <p class="text-body-lg text-body max-w-2xl mb-10 text-balance text-center">
       Upload your resume and job description. Get an instant recruiter
       evaluation — skill gap analysis, readability score, impact assessment, and
       shortlist probability.
     </p>
 
     <!-- CTA Cluster -->
-    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
       <a href="/scan" class="btn-primary w-full sm:w-auto shadow-level-2">
         Get Recruiter Feedback
       </a>
@@ -50,25 +56,5 @@
         See How It Works
       </a>
     </div>
-
-    <!-- Mini Social Proof -->
-    <p
-      class="mt-8 text-caption text-mute flex items-center justify-center gap-2"
-    >
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        class="text-success"
-        ><path
-          d="M20 6L9 17l-5-5"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path></svg
-      >
-      No signup required. Always free.
-    </p>
   </div>
 </section>

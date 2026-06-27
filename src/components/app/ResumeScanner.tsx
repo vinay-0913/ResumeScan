@@ -121,8 +121,22 @@ export function ResumeScanner() {
     { key: 'visibility' as const, label: 'Visibility', icon: '🔍' },
   ];
 
+  // Full-screen tailor view (covers entire viewport including navbar)
+  if (appState === 'suggestions' && analysis && structuredResume) {
+    return (
+      <div className="fixed inset-0 z-50 animate-in fade-in duration-300">
+        <ResumeTailor
+          analysis={analysis}
+          suggestions={suggestions}
+          structuredResume={structuredResume}
+          onStartOver={handleStartOver}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full max-w-6xl mx-auto flex flex-col gap-8">
+    <div className="w-full max-w-6xl mx-auto flex flex-col gap-8 px-6 py-10">
       {/* Stepper */}
       <div className="flex items-center justify-center mb-8 w-full max-w-3xl mx-auto">
         <StepIndicator step={1} current={appState} label="Upload" activeStates={['upload', 'analyzing', 'results', 'improving', 'suggestions']} />
@@ -189,27 +203,18 @@ export function ResumeScanner() {
                   </button>
                 ))}
               </div>
-
               <div className="p-0">
                 {activeTab === 'skills' && analysis.skillGapAnalysis && (
-                  <div className="animate-in fade-in">
-                    <SkillGapAnalysis data={analysis.skillGapAnalysis} />
-                  </div>
+                  <div className="animate-in fade-in"><SkillGapAnalysis data={analysis.skillGapAnalysis} /></div>
                 )}
                 {activeTab === 'readability' && analysis.readabilityAssessment && (
-                  <div className="animate-in fade-in">
-                    <ReadabilityAssessment data={analysis.readabilityAssessment} />
-                  </div>
+                  <div className="animate-in fade-in"><ReadabilityAssessment data={analysis.readabilityAssessment} /></div>
                 )}
                 {activeTab === 'impact' && analysis.impactAnalysis && (
-                  <div className="animate-in fade-in">
-                    <ImpactAnalysis data={analysis.impactAnalysis} />
-                  </div>
+                  <div className="animate-in fade-in"><ImpactAnalysis data={analysis.impactAnalysis} /></div>
                 )}
                 {activeTab === 'visibility' && analysis.recruiterSearchVisibility && (
-                  <div className="animate-in fade-in">
-                    <RecruiterVisibility data={analysis.recruiterSearchVisibility} />
-                  </div>
+                  <div className="animate-in fade-in"><RecruiterVisibility data={analysis.recruiterSearchVisibility} /></div>
                 )}
               </div>
             </div>
@@ -239,17 +244,6 @@ export function ResumeScanner() {
             </div>
             <h3 className="text-display-md text-ink">Crafting improvement suggestions...</h3>
             <p className="text-body-md text-mute mt-2 text-center max-w-md">Our AI is writing recruiter-quality rewrites for your weakest bullet points using the STAR method.</p>
-          </div>
-        )}
-
-        {appState === 'suggestions' && analysis && structuredResume && (
-          <div className="animate-in slide-in-from-bottom-8 fade-in duration-500 w-full max-w-[1600px] mx-auto">
-            <ResumeTailor 
-              analysis={analysis}
-              suggestions={suggestions}
-              structuredResume={structuredResume}
-              onStartOver={handleStartOver}
-            />
           </div>
         )}
       </div>

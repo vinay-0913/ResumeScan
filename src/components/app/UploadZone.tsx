@@ -64,7 +64,7 @@ export function UploadZone({ onUpload }: UploadZoneProps) {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="w-full max-w-5xl mx-auto flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
       <div className="text-center">
         <h2 className="text-display-lg text-ink mb-4">Get Your Recruiter Evaluation</h2>
@@ -73,65 +73,67 @@ export function UploadZone({ onUpload }: UploadZoneProps) {
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-8 bg-canvas p-8 rounded-xl shadow-level-4 border border-hairline">
         
-        {/* Upload Resume */}
-        <div className="flex flex-col gap-2">
-          <label className="text-body-md-strong text-ink">1. Upload Your Resume (PDF)</label>
-          <div
-            className={`relative border-2 border-dashed rounded-lg p-8 flex flex-col items-center justify-center transition-colors cursor-pointer ${
-              dragActive ? 'border-link bg-link-bg-soft/30' : file ? 'border-success bg-success/5' : 'border-hairline-strong hover:border-ink/30 bg-canvas-soft'
-            }`}
-            onDragEnter={handleDrag}
-            onDragLeave={handleDrag}
-            onDragOver={handleDrag}
-            onDrop={handleDrop}
-            onClick={() => inputRef.current?.click()}
-          >
-            <input
-              ref={inputRef}
-              type="file"
-              accept="application/pdf"
-              onChange={handleChange}
-              className="hidden"
-            />
-            
-            {file ? (
-              <div className="flex items-center gap-3 text-success">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                <div className="flex flex-col">
-                  <span className="text-body-md-strong">{file.name}</span>
-                  <span className="text-caption text-success/80">{(file.size / 1024 / 1024).toFixed(2)} MB</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          {/* Upload Resume */}
+          <div className="flex flex-col gap-2">
+            <label className="text-body-md-strong text-ink">1. Upload Your Resume (PDF)</label>
+            <div
+              className={`relative border-2 border-dashed rounded-lg p-8 flex flex-col items-center justify-center transition-colors cursor-pointer h-full min-h-[250px] ${
+                dragActive ? 'border-link bg-link-bg-soft/30' : file ? 'border-success bg-success/5' : 'border-hairline-strong hover:border-ink/30 bg-canvas-soft'
+              }`}
+              onDragEnter={handleDrag}
+              onDragLeave={handleDrag}
+              onDragOver={handleDrag}
+              onDrop={handleDrop}
+              onClick={() => inputRef.current?.click()}
+            >
+              <input
+                ref={inputRef}
+                type="file"
+                accept="application/pdf"
+                onChange={handleChange}
+                className="hidden"
+              />
+              
+              {file ? (
+                <div className="flex flex-col items-center gap-3 text-success text-center">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <div className="flex flex-col">
+                    <span className="text-body-md-strong">{file.name}</span>
+                    <span className="text-caption text-success/80">{(file.size / 1024 / 1024).toFixed(2)} MB</span>
+                  </div>
+                  <button type="button" onClick={(e) => { e.stopPropagation(); setFile(null); }} className="mt-2 px-3 py-1 bg-success/10 hover:bg-success/20 rounded-full transition-colors text-success text-sm font-medium">
+                    Remove
+                  </button>
                 </div>
-                <button type="button" onClick={(e) => { e.stopPropagation(); setFile(null); }} className="ml-auto p-1 hover:bg-success/20 rounded-full transition-colors text-success">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </button>
-              </div>
-            ) : (
-              <>
-                <div className="w-12 h-12 rounded-full bg-canvas border border-hairline shadow-level-1 flex items-center justify-center text-ink mb-4 group-hover:scale-110 transition-transform">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                <p className="text-body-md text-ink text-center mb-1">
-                  <span className="font-medium text-link">Click to upload</span> or drag and drop
-                </p>
-                <p className="text-caption text-mute">PDF up to 5MB</p>
-              </>
-            )}
+              ) : (
+                <>
+                  <div className="w-12 h-12 rounded-full bg-canvas border border-hairline shadow-level-1 flex items-center justify-center text-ink mb-4 group-hover:scale-110 transition-transform">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                  <p className="text-body-md text-ink text-center mb-1">
+                    <span className="font-medium text-link">Click to upload</span> or drag and drop
+                  </p>
+                  <p className="text-caption text-mute">PDF up to 5MB</p>
+                </>
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Paste JD */}
-        <div className="flex flex-col gap-2">
-          <label htmlFor="jd" className="text-body-md-strong text-ink flex justify-between items-baseline">
-            <span>2. Paste Job Description</span>
-            <span className="text-caption text-mute">{jobDescription.length} chars</span>
-          </label>
-          <textarea
-            id="jd"
-            value={jobDescription}
-            onChange={(e) => setJobDescription(e.target.value)}
-            placeholder="Paste the full job description here. Our AI recruiter will evaluate your resume against these requirements — focusing on skills, impact, readability, and real shortlist potential."
-            className="form-input min-h-[200px] py-3 resize-y bg-canvas-soft focus:bg-canvas focus:border-link focus:ring-1 focus:ring-link/50 transition-all"
-          />
+          {/* Paste JD */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="jd" className="text-body-md-strong text-ink flex justify-between items-baseline">
+              <span>2. Paste Job Description</span>
+              <span className="text-caption text-mute">{jobDescription.length} chars</span>
+            </label>
+            <textarea
+              id="jd"
+              value={jobDescription}
+              onChange={(e) => setJobDescription(e.target.value)}
+              placeholder="Paste the full job description here. Our AI recruiter will evaluate your resume against these requirements — focusing on skills, impact, readability, and real shortlist potential."
+              className="form-input h-full min-h-[250px] py-3 resize-none bg-canvas-soft focus:bg-canvas focus:border-link focus:ring-1 focus:ring-link/50 transition-all"
+            />
+          </div>
         </div>
 
         {error && (
